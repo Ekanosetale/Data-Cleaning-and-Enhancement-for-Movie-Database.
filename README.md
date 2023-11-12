@@ -23,7 +23,7 @@ Renaming a Column (Using sp_rename) Renames column 1 to Movie_id using the sp_re
 # Cleaning Director and Genre Columns
  Removes brackets and single quotes from the Director and Genre columns, enhancing data cleanliness and readability. This operation standardizes the format of the Director and Genre columns, making the data more consistent and user-friendly.
 # Outcome:
-![here](RESULT.png)
+![](RESULT.png)
 # Code Samples:
 The SQL queries/codes
 ![here](Codes.sql)
@@ -32,4 +32,6 @@ In conclusion, this SQL data cleaning project has successfully transformed a Kag
 # References:
 Alex The Data Analyst
 [Lint text](https://www.youtube.com/watch?v=8rO7ztF4NtU&pp=ygUeRGF0YXNldCBjbGVhbmluZyB3aXRoIHNxbCBBbGV4)
+
+
 
