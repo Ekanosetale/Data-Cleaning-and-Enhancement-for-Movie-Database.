@@ -27,7 +27,7 @@ Share the final state of the dataset after all cleaning steps.
 ![]()
 Results:
 •	If applicable, mention any improvements in data quality or usability resulting from your cleaning efforts.
-![]()
+![here](result.sql)
 # Code Samples:
 •	Include snippets of your SQL code to provide a glimpse of your technical skills.
 ![]()
