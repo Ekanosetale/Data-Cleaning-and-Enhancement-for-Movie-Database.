@@ -1,6 +1,9 @@
 # Data-Cleaning-and-Enhancement-for-Movie-Database.
 # Introduction:
 In the dynamic realm of data analytics, my recent project titled "Data Cleaning for Analysis: Enhancing Movie Database" stands as a pivotal exploration into the transformative power of meticulous data refinement. Driven by a dual-purpose objective—to ready the dataset for insightful analysis and to delve deep into the intricacies of data cleaning using SQL—this endeavour became a pathway for personal upskilling. Through a systematic series of steps, including column pruning, null value resolution, and type standardisation, the project not only rendered the dataset analysis-ready but also served as a hands-on tutorial in refining real-world data. This documentation encapsulates the journey, challenges, and outcomes, underscoring the project's role in not only optimizing data quality but also fostering continuous learning in the ever-evolving landscape of data management and analytics.
+# The Raw Dataset
+![](RAW.png)
+
 # Tools
 Microsoft SQL Server
  # Data Source:
@@ -25,7 +28,7 @@ Share the final state of the dataset after all cleaning steps.
 ![]()
 Results:
 •	If applicable, mention any improvements in data quality or usability resulting from your cleaning efforts.
-![here](result.sql)
+![here](RESULT.png)
 # Code Samples:
 •	Include snippets of your SQL code to provide a glimpse of your technical skills.
 ![here](Codes.sql)
