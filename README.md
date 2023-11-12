@@ -2,7 +2,7 @@
 # Introduction:
 In the dynamic realm of data analytics, my recent project titled "Data Cleaning for Analysis: Enhancing Movie Database" stands as a pivotal exploration into the transformative power of meticulous data refinement. Driven by a dual-purpose objective—to ready the dataset for insightful analysis and to delve deep into the intricacies of data cleaning using SQL—this endeavour became a pathway for personal upskilling. Through a systematic series of steps, including column pruning, null value resolution, and type standardisation, the project not only rendered the dataset analysis-ready but also served as a hands-on tutorial in refining real-world data. This documentation encapsulates the journey, challenges, and outcomes, underscoring the project's role in not only optimizing data quality but also fostering continuous learning in the ever-evolving landscape of data management and analytics.
 # The Raw Dataset
-![](RAW.png)
+![here](RAW.png)
 
 # Tools
 Microsoft SQL Server
@@ -24,17 +24,12 @@ Renaming a Column (Using sp_rename) Renames column 1 to Movie_id using the sp_re
 # Cleaning Director and Genre Columns
  Removes brackets and single quotes from the Director and Genre columns, enhancing data cleanliness and readability. This operation standardizes the format of the Director and Genre columns, making the data more consistent and user-friendly.
 Outcome:
-Share the final state of the dataset after all cleaning steps.
-![]()
-Results:
-•	If applicable, mention any improvements in data quality or usability resulting from your cleaning efforts.
 ![here](RESULT.png)
 # Code Samples:
-•	Include snippets of your SQL code to provide a glimpse of your technical skills.
+The SQL queries/codes
 ![here](Codes.sql)
 # Conclusion:
 In conclusion, this SQL data cleaning project has successfully transformed a Kaggle-sourced movie dataset into a refined and analysis-ready resource. Through systematic steps such as column pruning, null value handling, and data type standardization, the project not only optimized data quality but also served as a valuable learning experience. This endeavour underscores the significance of meticulous data preparation in facilitating insightful analyses and highlights the continuous learning journey within the dynamic realm of data management and analytics.
 # References:
-•	Include any references or sources that inspired or guided your work.
-•	Use a mix of text, images, and code snippets to make it engaging and easy to follow.
+[Lint text](https://www.youtube.com/watch?v=8rO7ztF4NtU&pp=ygUeRGF0YXNldCBjbGVhbmluZyB3aXRoIHNxbCBBbGV4)
 
