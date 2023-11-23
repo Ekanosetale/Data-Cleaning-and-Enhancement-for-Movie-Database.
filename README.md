@@ -14,6 +14,8 @@ The data exploration phase of the project was a crucial inception point, reveali
 # Dropping Columns
 Alters the table structure by removing the Stars and Description columns to clean up unnecessary data. This operation eliminates columns that may not be relevant or needed for analysis, improving database efficiency.
 # Null Value Handling
+    SELECT Gross, CONVERT(INT,Gross) 
+    FROM [About movies(1915-2023)]            
 **NULL** values in the Votes,  Gross, MetaScore and Movie Rating columns were updated with the Median value of each column. This helped to complete incomplete or missing information, allowing for further investigation or data correction.
 Similarly, the NULL values in the Certification column were updated with the value 'Unspecified' for completeness, and clarity and to enhance the comprehensibility of the data.
 # Data Type Conversion
