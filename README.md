@@ -13,16 +13,20 @@ The dataset utilized in this project originates as a CVS file from Kaggle, a ren
 The data exploration phase of the project was a crucial inception point, revealing the intricacies of the dataset sourced from Kaggle. Through systematic examination and analysis, key insights into the structure, composition, and potential challenges of the dataset were unearthed. This initial exploration not only laid the foundation for subsequent cleaning steps but also informed strategic decisions on handling null values, dropping unnecessary columns, and standardizing data types. 
 # Dropping Columns
 Alters the table structure by removing the Stars and Description columns to clean up unnecessary data. This operation eliminates columns that may not be relevant or needed for analysis, improving database efficiency.
+
     ALTER TABLE [About movies(1915-2023)] DROP COLUMN Stars,"Description"
+
 # Null Value Handling           
 **NULL** values in the Votes,  Gross, MetaScore and Movie Rating columns were updated with the Median value of each column. This helped to complete incomplete or missing information, allowing for further investigation or data correction.
 Similarly, the NULL values in the Certification column were updated with the value 'Unspecified' for completeness, and clarity and to enhance the comprehensibility of the data.
 # Data Type Conversion
 columns. Converts the data type of the Movie_Rating, Votes, MetaScore, and Gross, columns from NVARCHAR to INT for consistency and compatibility. This ensures that these columns contain integer values, making it easier to perform numerical operations or comparisons.
+
     SELECT Gross, CONVERT(INT,Gross) 
     FROM [About movies(1915-2023)] 
     UPDATE [About movies(1915-2023)]
     SET Gross = CONVERT(INT,Gross)
+    
 # Duplicate Row Detection
  Finds duplicate rows based on multiple columns, helping to maintain data integrity and remove redundant entries. The query compares each record with others in the table, identifying instances where all specified columns have the same values, indicating potential duplicates.
 # Column Renaming
