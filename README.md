@@ -18,7 +18,33 @@ Alters the table structure by removing the Stars and Description columns to clea
 
 # Null Value Handling           
 **NULL** values in the Votes,  Gross, MetaScore and Movie Rating columns were updated with the Median value of each column. This helped to complete incomplete or missing information, allowing for further investigation or data correction.
+
+    SELECT
+    PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY Gross) OVER () AS Median
+    FROM
+    [About movies(1915-2023)];
+
+    UPDATE [About movies(1915-2023)]
+    SET Gross = '16930000'
+    WHERE Gross IS NULL;
+    SELECT
+    UPDATE [About movies(1915-2023)]
+    SET MetaScore = CONVERT(INT,MetaScore) 
+    SELECT
+    PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY MetaScore) OVER () AS Median
+    FROM
+    [About movies(1915-2023)];
+
+   	UPDATE [About movies(1915-2023)]
+    SET MetaScore = '60'
+    WHERE MetaScore IS NULL
+    
 Similarly, the NULL values in the Certification column were updated with the value 'Unspecified' for completeness, and clarity and to enhance the comprehensibility of the data.
+
+    UPDATE [About movies(1915-2023)]
+    SET Certification = 'Unspecified'
+    WHERE Certification IS NULL ----(369 rows affected)
+
 # Data Type Conversion
 columns. Converts the data type of the Movie_Rating, Votes, MetaScore, and Gross, columns from NVARCHAR to INT for consistency and compatibility. This ensures that these columns contain integer values, making it easier to perform numerical operations or comparisons.
 
@@ -29,15 +55,40 @@ columns. Converts the data type of the Movie_Rating, Votes, MetaScore, and Gross
     
 # Duplicate Row Detection
  Finds duplicate rows based on multiple columns, helping to maintain data integrity and remove redundant entries. The query compares each record with others in the table, identifying instances where all specified columns have the same values, indicating potential duplicates.
+
+ SELECT *
+FROM "About movies(1915-2023)" A
+    WHERE EXISTS (
+    SELECT 1
+    FROM "About movies(1915-2023)" B
+    WHERE A.column1 = B.column1
+    AND A.Movie_Name = B.Movie_Name
+    AND A.Year_of_Release = B.Year_of_Release
+    AND A.Run_Time_in_minutes = B.Run_Time_in_minutes
+    AND A.Movie_Rating = B.Movie_Rating
+    AND A.Votes = B.Votes
+    AND A.MetaScore = B.MetaScore
+    AND A.Gross = B.Gross
+    AND A.Genre = B.Genre
+    AND A.Certification = B.Certification
+    AND A.Director = B.Director
+    AND A.column1 <> B.column1 
+);
+
 # Column Renaming
 Renaming a Column (Using sp_rename) Renames column 1 to Movie_id using the sp_rename stored procedure for improved clarity and consistency. This provides a more descriptive and standardised name for the Movie_id column, aligning with best practices for database design.
+
+    EXEC sp_rename '[About movies(1915-2023)].column1', 'Movie_id', 'COLUMN';
+
 # Cleaning Director and Genre Columns
  Removes brackets and single quotes from the Director and Genre columns, enhancing data cleanliness and readability. This operation standardizes the format of the Director and Genre columns, making the data more consistent and user-friendly.
+ 
     SELECT Director, REPLACE(REPLACE(REPLACE(Director,'[',''),']',''),'''','') 
     as Director FROM [About movies(1915-2023)];
     UPDATE [About movies(1915-2023)]
     SET Director =  REPLACE(REPLACE(REPLACE(Director,'[',''),']',''),'''','') 
     FROM [About movies(1915-2023)];
+    
 # Outcome:
 ![](nresult1.png)
 ![](nresult2.png)
