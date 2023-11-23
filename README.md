@@ -56,8 +56,8 @@ columns. Converts the data type of the Movie_Rating, Votes, MetaScore, and Gross
 # Duplicate Row Detection
  Finds duplicate rows based on multiple columns, helping to maintain data integrity and remove redundant entries. The query compares each record with others in the table, identifying instances where all specified columns have the same values, indicating potential duplicates.
 
- SELECT *
-FROM "About movies(1915-2023)" A
+    SELECT *
+    FROM "About movies(1915-2023)" A
     WHERE EXISTS (
     SELECT 1
     FROM "About movies(1915-2023)" B
@@ -73,7 +73,7 @@ FROM "About movies(1915-2023)" A
     AND A.Certification = B.Certification
     AND A.Director = B.Director
     AND A.column1 <> B.column1 
-);
+    );
 
 # Column Renaming
 Renaming a Column (Using sp_rename) Renames column 1 to Movie_id using the sp_rename stored procedure for improved clarity and consistency. This provides a more descriptive and standardised name for the Movie_id column, aligning with best practices for database design.
